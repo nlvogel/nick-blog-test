@@ -12,7 +12,7 @@ from functools import wraps
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('API_KEY')
+app.config['SECRET_KEY'] = os.getenv('API_KEY')
 ckeditor = CKEditor(app)
 Bootstrap(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
